@@ -16,21 +16,16 @@ const port = process.env.PORT;
 
 connectDB();
 
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://expense-tracker-three-woad.vercel.app/"
-  // add more origins as needed
-];
-
 // Middleware
 app.use(express.json());
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: true,
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Set-Cookie", "Cookie"],
   })
 );
+
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("dev"));
