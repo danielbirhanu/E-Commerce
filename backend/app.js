@@ -18,6 +18,7 @@ connectDB();
 
 const allowedOrigins = [
   "http://localhost:3000",
+  "https://expense-tracker-three-woad.vercel.app/"
   // add more origins as needed
 ];
 
